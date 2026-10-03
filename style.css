@@ -1,0 +1,162 @@
+/* General page styling */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+
+/* Header */
+
+header {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+header img {
+    display: block;
+    margin: 0 auto 10px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+
+/* Sections */
+
+.add-expense-section,
+.expenses-section,
+.instructions,
+.video-section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+
+/* Form */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* Descendant selector */
+
+.add-expense-section input,
+.add-expense-section select {
+    padding: 10px;
+    margin-top: 5px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+
+/* Focus pseudo-class */
+
+input:focus,
+select:focus {
+    outline: 2px solid #4caf50;
+}
+
+
+/* Negation pseudo-class */
+
+input:not([type="submit"]) {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+/* Button */
+
+button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+
+/* Button hover */
+
+button:hover {
+    background-color: #388e3c;
+}
+
+
+/* Expense table */
+
+.expenses-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+/* Descendant selector */
+
+.expenses-section td,
+.expenses-section th {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+
+/* Colored header */
+
+.expenses-section th {
+    background-color: #4caf50;
+    color: white;
+}
+
+
+/* Position pseudo-class */
+
+.expenses-section tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+/* Table row hover */
+
+.expenses-section tbody tr:hover {
+    background-color: #dff0d8;
+}
+
+
+/* First row selector */
+
+.expenses-section tbody tr:first-child {
+    font-weight: bold;
+}
+
+
+/* Instructions */
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+}
+
+
+/* Video */
+
+.video-section iframe {
+    max-width: 100%;
+}
