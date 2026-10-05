@@ -1,275 +1,327 @@
-/* ==============================
-COLOR PALETTE
-============================== */
+```css
+/* ================================
+   SpendWise Theme
+================================ */
 
 :root {
---dark-blue: #1E3A5F;
---blue: #2563EB;
---light-blue: #EFF6FF;
---white: #FFFFFF;
---light-gray: #F3F4F6;
---dark-text: #1F2937;
---border: #D1D5DB;
+    --brand-color: #2563eb;
+    --accent-color: #16a34a;
+    --surface-color: #f4f7fb;
+    --primary-text: #1f2937;
+    --secondary-text: #6b7280;
 }
 
-/* ==============================
-GENERAL PAGE
-============================== */
+
+/* ================================
+   Basic Page Settings
+================================ */
+
+* {
+    box-sizing: border-box;
+}
 
 body {
-background-color: var(--light-gray);
-color: var(--dark-text);
-
-```
-font-family: "DM Sans", sans-serif;
-
-font-size: 16px;
-line-height: 1.5;
-
-margin: 0;
-padding: 30px;
-```
-
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--surface-color);
+    color: var(--primary-text);
 }
 
-/* ==============================
-HEADINGS
-============================== */
 
-h1,
-h2 {
-font-family: "Merriweather", serif;
-color: var(--dark-blue);
+/* ================================
+   Main Dashboard Grid
+================================ */
+
+.dashboard {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 240px 1fr;
 }
 
-h1 {
-margin-bottom: 10px;
+
+/* ================================
+   Sidebar
+================================ */
+
+.sidebar {
+    background: var(--brand-color);
+    color: white;
+
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
 }
 
-h2 {
-margin-top: 0;
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
 }
 
-/* ==============================
-HEADING CARD
-============================== */
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
 
-header {
-background-color: var(--white);
+.navigation a {
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
 
+    transition: background-color 200ms ease;
+}
+
+.navigation a:hover,
+.navigation a:focus {
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+
+/* ================================
+   Main Area
+================================ */
+
+.main-area {
+    min-width: 0;
+}
+
+
+/* ================================
+   Header - Flexbox
+================================ */
+
+.header {
+    background: white;
+
+    padding: 24px 32px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.header h1 {
+    margin: 0 0 6px;
+    font-size: 28px;
+}
+
+.header p {
+    margin: 0;
+    color: var(--secondary-text);
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.profile span {
+    color: var(--secondary-text);
+    font-size: 14px;
+}
+
+
+/* ================================
+   Content
+================================ */
+
+.content {
+    padding: 32px;
+}
+
+.section-heading {
+    margin-bottom: 24px;
+}
+
+.section-heading h2 {
+    margin: 0 0 6px;
+}
+
+.section-heading p {
+    margin: 0;
+    color: var(--secondary-text);
+}
+
+
+/* ================================
+   Cards - CSS Grid
+================================ */
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* ================================
+   Individual Cards - Flexbox
+================================ */
+
+.card {
+    background: white;
+
+    padding: 24px;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 200ms ease,
+        box-shadow 200ms ease;
+}
+
+
+/* Hover and keyboard focus */
+
+.card:hover,
+.card:focus {
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+}
+
+
+/* Allow keyboard focus */
+
+.card {
+    outline: none;
+}
+
+.card:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+
+/* Card icon */
+
+.card-icon {
+    font-size: 34px;
+
+    min-width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--surface-color);
+
+    border-radius: 12px;
+}
+
+
+/* Card text */
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.card-content h3 {
+    margin: 0;
+}
+
+.card-content p {
+    margin: 0;
+    color: var(--secondary-text);
+    font-size: 14px;
+}
+
+.card-content strong {
+    color: var(--accent-color);
+    font-size: 20px;
+}
+
+
+/* ================================
+   Responsive Design
+================================ */
+
+@media (max-width: 768px) {
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        padding: 16px;
+    }
+
+    .logo {
+        margin-bottom: 16px;
+    }
+
+    .navigation {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .navigation a {
+        padding: 8px 10px;
+    }
+
+    .header {
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .profile {
+        align-items: flex-start;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ================================
+   Dark Theme - Stretch Goal
+================================ */
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+        --brand-color: #1d4ed8;
+        --accent-color: #22c55e;
+        --surface-color: #111827;
+        --primary-text: #f9fafb;
+        --secondary-text: #9ca3af;
+    }
+
+    .header,
+    .card {
+        background: #1f2937;
+    }
+
+    .header {
+        border-bottom-color: #374151;
+    }
+}
 ```
-padding: 30px;
-margin-bottom: 25px;
 
-border: 1px solid var(--border);
-border-radius: 12px;
-
-text-align: center;
-```
-
-}
-
-/* ==============================
-ADD EXPENSE CARD
-============================== */
-
-.add-expense-section {
-background-color: var(--white);
-
-```
-padding: 25px;
-margin-bottom: 25px;
-
-border: 1px solid var(--border);
-border-radius: 12px;
-```
-
-}
-
-/* ==============================
-FORM
-============================== */
-
-form {
-display: flex;
-flex-direction: column;
-gap: 12px;
-}
-
-label {
-font-weight: 600;
-}
-
-/* ==============================
-INPUTS
-============================== */
-
-input,
-select {
-padding: 12px;
-
-```
-border: 1px solid var(--border);
-border-radius: 8px;
-
-font-family: "DM Sans", sans-serif;
-font-size: 16px;
-```
-
-}
-
-/* Advanced selector: focus */
-
-input:focus,
-select:focus {
-outline: 2px solid var(--blue);
-border-color: var(--blue);
-}
-
-/* ==============================
-BUTTON
-============================== */
-
-button {
-background-color: var(--blue);
-color: var(--white);
-
-```
-padding: 12px 20px;
-
-border: none;
-border-radius: 8px;
-
-font-family: "DM Sans", sans-serif;
-font-size: 16px;
-font-weight: 600;
-
-cursor: pointer;
-
-margin-top: 10px;
-```
-
-}
-
-button:hover {
-background-color: var(--dark-blue);
-}
-
-/* ==============================
-EXPENSE TABLE CARD
-============================== */
-
-.expenses-section {
-background-color: var(--white);
-
-```
-padding: 25px;
-margin-bottom: 25px;
-
-border: 1px solid var(--border);
-border-radius: 12px;
-```
-
-}
-
-/* ==============================
-TABLE
-============================== */
-
-table {
-width: 100%;
-
-```
-border-collapse: collapse;
-
-margin-top: 15px;
-```
-
-}
-
-/* Table header */
-
-th {
-background-color: var(--dark-blue);
-color: var(--white);
-
-```
-padding: 12px;
-
-border: 1px solid var(--dark-blue);
-
-text-align: left;
-```
-
-}
-
-/* Table cells */
-
-td {
-padding: 12px;
-
-```
-border: 1px solid var(--border);
-```
-
-}
-
-/* Advanced selector: alternating rows */
-
-tr:nth-child(even) {
-background-color: var(--light-blue);
-}
-
-/* Advanced selector: hover */
-
-tbody tr:hover {
-background-color: #DBEAFE;
-}
-
-/* ==============================
-VIDEO
-============================== */
-
-.video-section {
-background-color: var(--white);
-
-```
-padding: 25px;
-margin-bottom: 25px;
-
-border: 1px solid var(--border);
-border-radius: 12px;
-```
-
-}
-
-/* ==============================
-DETAILS
-============================== */
-
-details {
-background-color: var(--white);
-
-```
-padding: 15px;
-margin-top: 20px;
-
-border: 1px solid var(--border);
-border-radius: 8px;
-```
-
-}
-
-summary {
-font-weight: 600;
-cursor: pointer;
-}
-
-/* ==============================
-IMAGE
-============================== */
-
-img {
-max-width: 100%;
-height: auto;
-}
