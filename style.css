@@ -1,162 +1,275 @@
-/* General page styling */
+/* ==============================
+COLOR PALETTE
+============================== */
+
+:root {
+--dark-blue: #1E3A5F;
+--blue: #2563EB;
+--light-blue: #EFF6FF;
+--white: #FFFFFF;
+--light-gray: #F3F4F6;
+--dark-text: #1F2937;
+--border: #D1D5DB;
+}
+
+/* ==============================
+GENERAL PAGE
+============================== */
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f4f6f8;
-    color: #333;
+background-color: var(--light-gray);
+color: var(--dark-text);
+
+```
+font-family: "DM Sans", sans-serif;
+
+font-size: 16px;
+line-height: 1.5;
+
+margin: 0;
+padding: 30px;
+```
+
 }
 
+/* ==============================
+HEADINGS
+============================== */
 
-/* Header */
-
-header {
-    text-align: center;
-    background-color: #ffffff;
-    padding: 25px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-}
-
-header img {
-    display: block;
-    margin: 0 auto 10px;
+h1,
+h2 {
+font-family: "Merriweather", serif;
+color: var(--dark-blue);
 }
 
 h1 {
-    margin-bottom: 10px;
+margin-bottom: 10px;
 }
 
-
-/* Sections */
-
-.add-expense-section,
-.expenses-section,
-.instructions,
-.video-section {
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
+h2 {
+margin-top: 0;
 }
 
+/* ==============================
+HEADING CARD
+============================== */
 
-/* Form */
+header {
+background-color: var(--white);
+
+```
+padding: 30px;
+margin-bottom: 25px;
+
+border: 1px solid var(--border);
+border-radius: 12px;
+
+text-align: center;
+```
+
+}
+
+/* ==============================
+ADD EXPENSE CARD
+============================== */
+
+.add-expense-section {
+background-color: var(--white);
+
+```
+padding: 25px;
+margin-bottom: 25px;
+
+border: 1px solid var(--border);
+border-radius: 12px;
+```
+
+}
+
+/* ==============================
+FORM
+============================== */
 
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+display: flex;
+flex-direction: column;
+gap: 12px;
 }
 
-
-/* Descendant selector */
-
-.add-expense-section input,
-.add-expense-section select {
-    padding: 10px;
-    margin-top: 5px;
-    width: 100%;
-    max-width: 400px;
-    box-sizing: border-box;
+label {
+font-weight: 600;
 }
 
+/* ==============================
+INPUTS
+============================== */
 
-/* Focus pseudo-class */
+input,
+select {
+padding: 12px;
+
+```
+border: 1px solid var(--border);
+border-radius: 8px;
+
+font-family: "DM Sans", sans-serif;
+font-size: 16px;
+```
+
+}
+
+/* Advanced selector: focus */
 
 input:focus,
 select:focus {
-    outline: 2px solid #4caf50;
+outline: 2px solid var(--blue);
+border-color: var(--blue);
 }
 
-
-/* Negation pseudo-class */
-
-input:not([type="submit"]) {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-
-/* Button */
+/* ==============================
+BUTTON
+============================== */
 
 button {
-    padding: 10px 20px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: fit-content;
+background-color: var(--blue);
+color: var(--white);
+
+```
+padding: 12px 20px;
+
+border: none;
+border-radius: 8px;
+
+font-family: "DM Sans", sans-serif;
+font-size: 16px;
+font-weight: 600;
+
+cursor: pointer;
+
+margin-top: 10px;
+```
+
 }
-
-
-/* Button hover */
 
 button:hover {
-    background-color: #388e3c;
+background-color: var(--dark-blue);
 }
 
+/* ==============================
+EXPENSE TABLE CARD
+============================== */
 
-/* Expense table */
+.expenses-section {
+background-color: var(--white);
 
-.expenses-section table {
-    width: 100%;
-    border-collapse: collapse;
+```
+padding: 25px;
+margin-bottom: 25px;
+
+border: 1px solid var(--border);
+border-radius: 12px;
+```
+
 }
 
+/* ==============================
+TABLE
+============================== */
 
-/* Descendant selector */
+table {
+width: 100%;
 
-.expenses-section td,
-.expenses-section th {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
+```
+border-collapse: collapse;
+
+margin-top: 15px;
+```
+
 }
 
+/* Table header */
 
-/* Colored header */
+th {
+background-color: var(--dark-blue);
+color: var(--white);
 
-.expenses-section th {
-    background-color: #4caf50;
-    color: white;
+```
+padding: 12px;
+
+border: 1px solid var(--dark-blue);
+
+text-align: left;
+```
+
 }
 
+/* Table cells */
 
-/* Position pseudo-class */
+td {
+padding: 12px;
 
-.expenses-section tr:nth-child(even) {
-    background-color: #f2f2f2;
+```
+border: 1px solid var(--border);
+```
+
 }
 
+/* Advanced selector: alternating rows */
 
-/* Table row hover */
-
-.expenses-section tbody tr:hover {
-    background-color: #dff0d8;
+tr:nth-child(even) {
+background-color: var(--light-blue);
 }
 
+/* Advanced selector: hover */
 
-/* First row selector */
-
-.expenses-section tbody tr:first-child {
-    font-weight: bold;
+tbody tr:hover {
+background-color: #DBEAFE;
 }
 
+/* ==============================
+VIDEO
+============================== */
 
-/* Instructions */
+.video-section {
+background-color: var(--white);
+
+```
+padding: 25px;
+margin-bottom: 25px;
+
+border: 1px solid var(--border);
+border-radius: 12px;
+```
+
+}
+
+/* ==============================
+DETAILS
+============================== */
+
+details {
+background-color: var(--white);
+
+```
+padding: 15px;
+margin-top: 20px;
+
+border: 1px solid var(--border);
+border-radius: 8px;
+```
+
+}
 
 summary {
-    cursor: pointer;
-    font-weight: bold;
-    padding: 10px;
+font-weight: 600;
+cursor: pointer;
 }
 
+/* ==============================
+IMAGE
+============================== */
 
-/* Video */
-
-.video-section iframe {
-    max-width: 100%;
+img {
+max-width: 100%;
+height: auto;
 }
