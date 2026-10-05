@@ -1,184 +1,136 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<title>My Budget Tracker</title>
+    <title>SpendWise Dashboard</title>
 
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
-
-<!-- CSS -->
-<link rel="stylesheet" href="style.css">
-```
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-```
-<!-- Page Heading -->
-<header>
-    <img
-        src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png"
-        alt="Budget tracker icon"
-        width="80"
-    >
+    <div class="dashboard">
 
-    <h1>My Budget Tracker</h1>
+        <!-- Sidebar -->
+        <aside class="sidebar">
 
-    <p>Track your income and expenses in one place.</p>
-</header>
+            <div class="logo">
+                SpendWise
+            </div>
 
+            <nav class="navigation">
+                <a href="#">Dashboard</a>
+                <a href="#">Expenses</a>
+                <a href="#">Savings</a>
+                <a href="#">Reports</a>
+                <a href="#">Settings</a>
+            </nav>
 
-<!-- Add Expense Form -->
-<section class="add-expense-section">
-
-    <h2>Add Expense</h2>
-
-    <form>
-
-        <label for="expense-name">Expense Name</label>
-
-        <input
-            type="text"
-            id="expense-name"
-            placeholder="Enter expense name"
-        >
+        </aside>
 
 
-        <label for="expense-amount">Amount</label>
+        <!-- Main Area -->
+        <div class="main-area">
 
-        <input
-            type="number"
-            id="expense-amount"
-            placeholder="Enter amount"
-        >
+            <!-- Header -->
+            <header class="header">
 
+                <div>
+                    <h1>SpendWise Dashboard</h1>
+                    <p>Manage and understand your spending.</p>
+                </div>
 
-        <label for="expense-category">Category</label>
+                <div class="profile">
+                    <span>Welcome</span>
+                    <strong>User</strong>
+                </div>
 
-        <select id="expense-category">
-
-            <option value="food">Food</option>
-
-            <option value="transport">Transport</option>
-
-            <option value="rent">Rent</option>
-
-            <option value="entertainment">Entertainment</option>
-
-            <option value="other">Other</option>
-
-        </select>
+            </header>
 
 
-        <button type="button">Add Expense</button>
+            <!-- Dashboard Content -->
+            <main class="content">
 
-    </form>
-
-</section>
-
-
-<!-- Expenses Table -->
-<section class="expenses-section">
-
-    <h2>Your Expenses</h2>
-
-    <table>
-
-        <thead>
-
-            <tr>
-                <th>Name</th>
-                <th>Amount</th>
-                <th>Category</th>
-                <th>Date</th>
-            </tr>
-
-        </thead>
+                <div class="section-heading">
+                    <h2>Financial Overview</h2>
+                    <p>Your spending categories this month</p>
+                </div>
 
 
-        <tbody>
+                <!-- Category Cards -->
+                <section class="cards">
 
-            <tr>
-                <td>Lunch</td>
-                <td>KES 300</td>
-                <td>Food</td>
-                <td>2026-10-01</td>
-            </tr>
-
-            <tr>
-                <td>Bus Fare</td>
-                <td>KES 150</td>
-                <td>Transport</td>
-                <td>2026-10-02</td>
-            </tr>
-
-            <tr>
-                <td>House Rent</td>
-                <td>KES 5,000</td>
-                <td>Rent</td>
-                <td>2026-10-03</td>
-            </tr>
-
-            <tr>
-                <td>Football</td>
-                <td>KES 500</td>
-                <td>Entertainment</td>
-                <td>2026-10-04</td>
-            </tr>
-
-            <tr>
-                <td>Shopping</td>
-                <td>KES 800</td>
-                <td>Other</td>
-                <td>2026-10-05</td>
-            </tr>
-
-        </tbody>
-
-    </table>
-
-</section>
+                    <article class="card">
+                        <div class="card-icon">🍽️</div>
+                        <div class="card-content">
+                            <h3>Food</h3>
+                            <p>Monthly spending</p>
+                            <strong>KSh 8,500</strong>
+                        </div>
+                    </article>
 
 
-<!-- YouTube Video -->
-<section class="video-section">
-
-    <h2>Budgeting Tips</h2>
-
-    <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/2Vv-BfVoq4g"
-        title="Budgeting tips video"
-        frameborder="0"
-        allowfullscreen>
-    </iframe>
-
-</section>
+                    <article class="card">
+                        <div class="card-icon">🚌</div>
+                        <div class="card-content">
+                            <h3>Transport</h3>
+                            <p>Monthly spending</p>
+                            <strong>KSh 4,200</strong>
+                        </div>
+                    </article>
 
 
-<!-- How to Use -->
-<details>
+                    <article class="card">
+                        <div class="card-icon">🏠</div>
+                        <div class="card-content">
+                            <h3>Rent</h3>
+                            <p>Monthly spending</p>
+                            <strong>KSh 12,000</strong>
+                        </div>
+                    </article>
 
-    <summary>How to use this tracker</summary>
 
-    <p>
-        Enter the name and amount of your expense, select a category,
-        and click the Add Expense button. The expense table shows
-        examples of how your expenses can be organized.
-    </p>
+                    <article class="card">
+                        <div class="card-icon">🎬</div>
+                        <div class="card-content">
+                            <h3>Entertainment</h3>
+                            <p>Monthly spending</p>
+                            <strong>KSh 3,000</strong>
+                        </div>
+                    </article>
 
-</details>
-```
+
+                    <article class="card">
+                        <div class="card-icon">💰</div>
+                        <div class="card-content">
+                            <h3>Savings</h3>
+                            <p>Amount saved</p>
+                            <strong>KSh 6,500</strong>
+                        </div>
+                    </article>
+
+
+                    <article class="card">
+                        <div class="card-icon">💡</div>
+                        <div class="card-content">
+                            <h3>Utilities</h3>
+                            <p>Monthly spending</p>
+                            <strong>KSh 2,800</strong>
+                        </div>
+                    </article>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
 
 </body>
 </html>
+```
+
